@@ -74,8 +74,6 @@ app.get("/products", async (req, res) => {
   }
 });
 
-
-
 // Get product info with user join table
 app.get("/all", async (_, res) => {
   try {
