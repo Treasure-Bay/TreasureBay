@@ -19,7 +19,7 @@ function ProductMainCards({
   id,
 }) {
 
-  const {singleProduct, setSingleProduct} = useContext(SingleProductContext)
+  const { singleProduct, setSingleProduct } = useContext(SingleProductContext)
   const [loading, setLoading] = useState(true)
   const [loadingMessage, setLoadingMessage] = useState("")
   let navigate = useNavigate();
@@ -36,41 +36,41 @@ function ProductMainCards({
     setLoadingMessage('Products are loading')
     fetch(`http://localhost:3025/product/${e.target.id}`)
       .then((response) => response.json())
-      .then((data) => setSingleProduct(data)) 
+      .then((data) => setSingleProduct(data))
       .then(navigate('/productitem'))
-      setLoading(false)
-     
+    setLoading(false)
+
   };
-  
-// console.log(singleProduct);
+
+  // console.log(singleProduct);
 
 
   return (
-<div className="mainproductpage">
-    <ProductItemContainer id={id} className="productcontainer">
-      <ProductCard>
-        <ProductEach id={id} onClick={handleSingleProduct}>
-          <ProductName id={id}>{product_name}</ProductName>
-          
-          <PicImg id={id} src={image_url[0]} />
-          <ProductPrice id={id}>{price}</ProductPrice>
+    <div className="mainproductpage">
+      <ProductItemContainer id={id} className="productcontainer">
+        <ProductCard>
+          <ProductEach id={id} onClick={handleSingleProduct}>
+            <ProductName id={id}>{product_name}</ProductName>
 
-          
-          <UserProfile id={id}>
-            {" "}
-            Seller:
-            <UserProfileImg id={id} src={avatar2} />
-            <UserInfo id={id}>
-              {fname} {lname}{" "}
-            </UserInfo>
-          </UserProfile>
-        </ProductEach>
-      </ProductCard>
-    </ProductItemContainer>
+            <PicImg id={id} src={image_url[0]} />
+            <ProductPrice id={id}>{price}</ProductPrice>
+
+
+            <UserProfile id={id}>
+              {" "}
+              Seller:
+              <UserProfileImg id={id} src={avatar} />
+              <UserInfo id={id}>
+                {fname} {lname}{" "}
+              </UserInfo>
+            </UserProfile>
+          </ProductEach>
+        </ProductCard>
+      </ProductItemContainer>
     </div>
-    
+
   );
-  
+
 }
 
 export default ProductMainCards;

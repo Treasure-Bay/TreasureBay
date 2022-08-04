@@ -14,6 +14,7 @@ import ProductPage from './components/ProductItem/ProductPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import LoadingContext from './context/LoadingProvider';
 import UserContext from './context/UserProvider';
+import SearchResults from './components/SearchResults/SearchResults';
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route path='/postanitem' element={<PostItemPage />} />
         <Route path='/messages' element={<MessagingPage />} />
         <Route path='/onlineshoppingtips' element={<OnlineShoppingTips />} />
+        <Route path='/searchresults' element={<SearchResults />} />
       </Routes>
       <Footer />
 

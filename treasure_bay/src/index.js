@@ -4,23 +4,27 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './context/UserProvider';
+import { SearchProvider } from './context/SearchProvider';
 import { LoadingProvider } from './context/LoadingProvider';
 import { ConversationsProvider } from './context/ConversationsProvider';
 import { SingleProductProvider } from './context/ProductProvider';
+import Search from './components/Header/SearchBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <SingleProductProvider>
-        <LoadingProvider>
-          <ConversationsProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </ConversationsProvider>
-        </LoadingProvider>
-      </SingleProductProvider>
+      <SearchProvider>
+        <SingleProductProvider>
+          <LoadingProvider>
+            <ConversationsProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </ConversationsProvider>
+          </LoadingProvider>
+        </SingleProductProvider>
+      </SearchProvider>
     </UserProvider>
   </React.StrictMode>
 );

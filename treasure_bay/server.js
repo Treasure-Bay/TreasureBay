@@ -242,8 +242,9 @@ app.post("/multiple", upload.array("images"), async (req, res) => {
     console.log(error);
     res.send(error.message);
   }
-  //await unlinkFile(file.path);
 });
+
+
 
 //=================== Listening on Port ==============================//
 app.listen(API_PORT, () => {
