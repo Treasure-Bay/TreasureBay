@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import PicCarousel from "./PicCarousel";
-import avatar2 from "./joshua.png";
+import avatar2 from "./images/joshua.png";
 import { useNavigate } from "react-router-dom";
 import ProductItem from "./ProductItem";
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext, useEffect } from "react";
 import SingleProductContext from "../../context/ProductProvider";
+import UserContext from "../../context/UserProvider";
 
 function ProductMainCards({
   product_name,
@@ -18,10 +19,11 @@ function ProductMainCards({
   fname,
   id,
 }) {
+  const { singleProduct, setSingleProduct } = useContext(SingleProductContext);
+  const [loading, setLoading] = useState(true);
+  const [loadingMessage, setLoadingMessage] = useState("");
 
-  const {singleProduct, setSingleProduct} = useContext(SingleProductContext)
-  const [loading, setLoading] = useState(true)
-  const [loadingMessage, setLoadingMessage] = useState("")
+ 
   let navigate = useNavigate();
 
   // useEffect(() => {
@@ -32,58 +34,80 @@ function ProductMainCards({
   // }, [singleProduct]);
 
   const handleSingleProduct = (e) => {
-    e.preventDefault()
-    setLoadingMessage('Products are loading')
+    e.preventDefault();
+    setLoadingMessage("Products are loading");
     fetch(`http://localhost:3025/product/${e.target.id}`)
       .then((response) => response.json())
-      .then((data) => setSingleProduct(data)) 
-      .then(navigate('/productitem'))
-      setLoading(false)
-     
+      .then((data) => setSingleProduct(data))
+      // .then(navigate("/productitem"));
+    setLoading(false);
   };
-  
-// console.log(singleProduct);
+ 
 
+   
+  const deleteProduct = (e) => {
+    
+    fetch(`http://localhost:3025/product/delete/${e.target.id}`, {
+        method: 'DELETE'
+    }).then(() => {
+      setLoading(false);
+      window.location.reload();
+    }
+    )
+}
+   
+
+  // console.log(singleProduct);
 
   return (
-<div className="mainproductpage">
-    <ProductItemContainer id={id} className="productcontainer">
-      <ProductCard>
-        <ProductEach id={id} onClick={handleSingleProduct}>
-          <ProductName id={id}>{product_name}</ProductName>
-          
-          <PicImg id={id} src={image_url[0]} />
-          <ProductPrice id={id}>{price}</ProductPrice>
+    <div className="mainproductpage">
+      <ProductItemContainer id={id} className="productcontainer">
+        <ProductCard>
+          <ProductEach id={id} onClick={handleSingleProduct}>
+            <ProductName id={id}>{product_name}</ProductName>
 
-          
-          <UserProfile id={id}>
-            {" "}
-            Seller:
-            <UserProfileImg id={id} src={avatar2} />
-            <UserInfo id={id}>
-              {fname} {lname}{" "}
-            </UserInfo>
-          </UserProfile>
-        </ProductEach>
-      </ProductCard>
-    </ProductItemContainer>
+            <PicImg id={id} src={image_url[0]} />
+            <ProductPrice id={id}>{price}</ProductPrice>
+
+            <UserProfile id={id}>
+              {" "}
+              Seller:
+              <UserProfileImg id={id} src={avatar} />
+              <UserInfo id={id}>
+                {fname} {lname}{" "}
+
+              </UserInfo>
+              <Deletebtn id={id} onClick={deleteProduct}>Delete</Deletebtn>
+            </UserProfile>
+          </ProductEach>
+        </ProductCard>
+      </ProductItemContainer>
     </div>
-    
   );
-  
 }
 
 export default ProductMainCards;
 
+const Deletebtn=styled.button`
+  height: 30px;
+  background-color:red;
+  color:white;
+  z-index:100;
+
+`;
 const ProductItemContainer = styled.div`
-/* height: 100vh; */
+  /* height: 100vh; */
   margin-bottom: 40px;
 `;
 
-const ProductCard = styled.div``;
+const ProductCard = styled.div`
+`;
+
 const PicImg = styled.img`
   width: 250px;
-  height: 300px;
+  height: 250px;
+  border: #0d99ff 3px solid;
+  border-radius: 10px;
 `;
 const ProductDescription = styled.div`
   text-align: center;
@@ -100,7 +124,7 @@ const ProductEach = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.1);
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   transition: 0.3s;
   border-radius: 10px;
   :hover {
@@ -119,11 +143,13 @@ const ProductName = styled.div`
   font-size: 25px;
   font-weight: 500px;
   color: black;
+  text-align: center;
 `;
 const ProductPrice = styled.div`
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500px;
   color: black;
+  margin-top: 5px;
 `;
 const BuyButton = styled.button`
   width: 100px;
@@ -143,7 +169,7 @@ const Message = styled.button`
 `;
 const UserProfile = styled.div`
   color: black;
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
