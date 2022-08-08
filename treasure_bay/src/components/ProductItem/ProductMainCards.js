@@ -22,11 +22,8 @@ function ProductMainCards({
   const { singleProduct, setSingleProduct } = useContext(SingleProductContext);
   const [loading, setLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState("");
-<<<<<<< HEAD
 
  
-=======
->>>>>>> c51fcb0465026279f728b688c0ad138a436a328c
   let navigate = useNavigate();
 
   // useEffect(() => {
@@ -42,7 +39,6 @@ function ProductMainCards({
     fetch(`http://localhost:3025/product/${e.target.id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data))
-<<<<<<< HEAD
       // .then(navigate("/productitem"));
     setLoading(false);
   };
@@ -61,12 +57,6 @@ function ProductMainCards({
 }
    
 
-=======
-      .then(navigate("/productitem"));
-    setLoading(false);
-  };
-
->>>>>>> c51fcb0465026279f728b688c0ad138a436a328c
   // console.log(singleProduct);
 
   return (
@@ -85,13 +75,9 @@ function ProductMainCards({
               <UserProfileImg id={id} src={avatar} />
               <UserInfo id={id}>
                 {fname} {lname}{" "}
-<<<<<<< HEAD
 
               </UserInfo>
               <Deletebtn id={id} onClick={deleteProduct}>Delete</Deletebtn>
-=======
-              </UserInfo>
->>>>>>> c51fcb0465026279f728b688c0ad138a436a328c
             </UserProfile>
           </ProductEach>
         </ProductCard>
