@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 function HomePage() {
   const { user, setUser } = useContext(UserContext)
   console.log(user)
+  //test comment
   return (
     <div className='homepage'>
       <HomePageMessageContainer>
