@@ -77,6 +77,7 @@ function ProductMainCards({
                 {fname} {lname}{" "}
 
               </UserInfo>
+              <br></br>
               <Deletebtn id={id} onClick={deleteProduct}>Delete</Deletebtn>
             </UserProfile>
           </ProductEach>
@@ -92,8 +93,8 @@ const Deletebtn=styled.button`
   height: 30px;
   background-color:red;
   color:white;
-  z-index:100;
-
+  margin-left:30px;
+  margin-right:10px
 `;
 const ProductItemContainer = styled.div`
   /* height: 100vh; */
