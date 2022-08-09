@@ -7,8 +7,8 @@ function Footer() {
   return (
     <div className='footer'>
      <CopyRightContainer>
-          <CopyRight src={copyright} />
-          <Header>Treasure Bay LLC.</Header>
+          <CopyRightLogo src={copyright} />
+          <ComName>Treasure Bay LLC.</ComName>
      </CopyRightContainer>
      <ShoppingTipsContainer>
           <Link to='/about'><Header>About</Header></Link> |
@@ -32,7 +32,15 @@ const Header = styled.h3`
           color: #0D99FF;
      }
 `
-const CopyRight = styled.img`
+
+const ComName = styled.h3`
+     color: #0D99FF;
+     font-size: 15px;
+     margin-left: 10px;
+     margin-right: 15px;
+`
+
+const CopyRightLogo = styled.img`
      height: 15px;
      margin-left: 10px;
      margin-right: -10px;

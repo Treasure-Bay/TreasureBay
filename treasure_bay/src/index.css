@@ -27,7 +27,8 @@ code {
 .homepage {
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: center;
 }
 
 .productcontent {
@@ -90,5 +91,7 @@ code {
 .shoppingtips {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-width: 1200px;
 }

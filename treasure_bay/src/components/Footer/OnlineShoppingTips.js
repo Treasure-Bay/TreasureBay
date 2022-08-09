@@ -4,8 +4,11 @@ import styled from 'styled-components';
 function OnlineShoppingTips() {
   return (
     <div className='shoppingtips'>
+        <SafetyTipsHeader>
+        Best Practices for Buying & Selling Items Online
+        </SafetyTipsHeader>
       <TextContainer>
-        <ShoppingTipsHeader>Best Practices for Buying & Selling Items Online</ShoppingTipsHeader>
+        <ShoppingTipsHeader></ShoppingTipsHeader>
         <ShoppingTipsOverview>
           The team at Treasure Bay values the lives and safety of all who use our site so we <br/>
           put together a few things you should keep in mind when buying & selling online.
@@ -35,6 +38,27 @@ function OnlineShoppingTips() {
 }
 
 export default OnlineShoppingTips;
+
+const SafetyTipsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 100px;
+`
+
+const SafetyTipsHeader = styled.div`
+  height: 125px;
+  width: 100vw;
+  background-color: #0D99FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+`
 
 const TextContainer = styled.div`
   display: flex;
