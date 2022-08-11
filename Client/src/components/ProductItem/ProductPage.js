@@ -12,10 +12,15 @@ function ProductPage() {
   }, []);
 
   function getProducts() {
-    fetch("https://treasure-bay-server.herokuapp.com/all")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
-    setLoading(false);
+    try {
+      fetch("https://treasure-bay-server.herokuapp.com/all")
+        .then((response) => response.json())
+        .then((data) => setProducts(data));
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   return (
