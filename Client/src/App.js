@@ -52,6 +52,7 @@ function App() {
         <Route path='/messages' element={<MessagingPage />} />
         <Route path='/onlineshoppingtips' element={<OnlineShoppingTips />} />
         <Route path='/searchresults' element={<SearchResults />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
       <Footer />
 
