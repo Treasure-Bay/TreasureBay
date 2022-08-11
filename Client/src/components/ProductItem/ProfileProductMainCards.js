@@ -48,7 +48,7 @@ function ProfileProductMainCards({
       method: 'DELETE'
     }).then(() => {
       setLoading(false);
-      window.location.reload();
+      navigate("/profile")
     }
     )
   }
