@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from 'react'
+import React, { createContext, useEffect, useContext } from 'react'
 import Conversations from '../Conversations/Conversations';
 import Messages from '../Messages/Messages'
 import axios from 'axios';
@@ -8,12 +8,12 @@ import './MessagingPage.css'
 
 function MessagingPage() {
 
-    const { user } = createContext(UserContext)
-
+    const { user } = useContext(UserContext)
     const { setMessages, setConversations } = useConversations()
 
-    //will be replaced with user id
-    const ID = user.user_id
+    // will be replaced with user id
+    console.log(user[0].user_id)
+    const ID = user[0].user_id
     useEffect(() => {
         axios.all([
             axios.get(`http://localhost:3025/conversations/${ID}`),
