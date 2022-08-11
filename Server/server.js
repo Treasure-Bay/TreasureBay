@@ -133,12 +133,9 @@ app.post(`/createprofile`, upload.array("file"), async (req, res, next) => {
   try {
     const avatar = req.files;
     const result = await uploadFile(avatar);
-    console.log(avatar);
     const imgKey = avatar[0].filename;
     const imageURL = `https://treasure-bay-images.s3.amazonaws.com/${imgKey}`;
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    console.log(req.file);
-    console.log(req.body);
     await db.query(
       `INSERT INTO users (first_name, last_name, city, state, zipcode, email, password, avatar) VALUES ('${req.body.first_name}', '${req.body.last_name}', '${req.body.city}', '${req.body.state}', '${req.body.zipcode}', '${req.body.email}', '${hashedPassword}', '${imageURL}');`
     );

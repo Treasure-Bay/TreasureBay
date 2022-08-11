@@ -3,6 +3,9 @@ import styled from "styled-components";
 import PicCarousel from "./PicCarousel";
 import avatar2 from "./images/joshua.png";
 import SingleProductContext from "../../context/ProductProvider";
+import { useConversations } from "../../context/ConversationsProvider";
+import UserContext from '../../context/UserProvider';
+import { useNavigate } from 'react-router-dom';
 
 function ProductItem() {
   const { singleProduct, setSingleProduct } = useContext(SingleProductContext);
@@ -14,6 +17,17 @@ function ProductItem() {
   // }, [singleProduct]);
   // localStorage.setItem("currentProduct", JSON.stringify([singleProduct]) )
   console.log(singleProduct);
+
+  const { user } = useContext(UserContext)
+  const { createConversation } = useConversations()
+  const nav = useNavigate()
+
+  const handleMessage = (e) => {
+    createConversation(user[0].user_id, e.target.id)
+    return (
+      nav('/messages')
+    )
+  }
 
   // const currentProduct = localStorage.getItem("currentProduct");
   //   if (currentProduct !== null) {
@@ -41,7 +55,7 @@ function ProductItem() {
             <ProductName>{singleProduct[0].product_name}</ProductName>
             <ProductPrice>{singleProduct[0].price}</ProductPrice>
             <BuyButton>Buy Now</BuyButton>
-            <Message>Message Seller</Message>
+            <Message id={singleProduct[0].user_id} onClick={handleMessage}>Message Seller</Message>
 
             <ProductDescription>
               <h3>Description</h3>
@@ -126,6 +140,7 @@ const BuyButton = styled.button`
   color: white;
   margin-bottom: 10px;
   border: none;
+  display: none;
 `;
 const Message = styled.button`
   width: 150px;
