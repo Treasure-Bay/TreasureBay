@@ -9,22 +9,26 @@ import './MessagingPage.css'
 function MessagingPage() {
 
     const { user } = useContext(UserContext)
-
     const { setMessages, setConversations } = useConversations()
 
-    //will be replaced with user id
-    console.log(user[0].user_id)
-    const ID = user[0].user_id
     useEffect(() => {
-        axios.all([
-            axios.get(`https://treasure-bay-server.herokuapp.com/conversations/${ID}`),
-            axios.get('https://treasure-bay-server.herokuapp.com/messages')
-        ])
-            .then((response) => {
-                setConversations(response[0].data);
-                setMessages(response[1].data);
-            });
+        getConversations()
     }, [user])
+
+    const getConversations = async () => {
+        try {
+            await axios.all([
+                axios.get(`https://treasure-bay-server.herokuapp.com/conversations/${user[0].user_id}`),
+                axios.get('https://treasure-bay-server.herokuapp.com/messages')
+            ])
+                .then((response) => {
+                    setConversations(response[0].data);
+                    setMessages(response[1].data);
+                })
+        } catch (err) {
+
+        }
+    }
 
 
     return (
