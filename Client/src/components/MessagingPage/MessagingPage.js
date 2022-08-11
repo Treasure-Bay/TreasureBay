@@ -28,14 +28,16 @@ function MessagingPage() {
 
 
     return (
-        <div className='messaging-container'>
-            <div className='conversations'>
-                <Conversations />
-            </div>
-            <div className='messaging'>
-                <Messages />
-            </div>
-        </div>
+        <>
+            {user && <div className='messaging-container'>
+                <div className='conversations'>
+                    <Conversations />
+                </div>
+                <div className='messaging'>
+                    <Messages />
+                </div>
+            </div>}
+        </>
     )
 }
 
