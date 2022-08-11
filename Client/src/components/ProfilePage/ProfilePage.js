@@ -30,7 +30,7 @@ function ProfilePage() {
 
   return (
     <>
-      {!userproduct ? (
+      {!userproduct && user ? (
         <div>
           <h1>loading</h1>
         </div>
