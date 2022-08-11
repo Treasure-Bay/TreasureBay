@@ -22,7 +22,7 @@ function LogInPage() {
     }
     console.log(data)
     try {
-      let returnedData = await axios.post("http://localhost:3025/login/", data);
+      let returnedData = await axios.post("https://treasure-bay-server.herokuapp.com/login/", data);
       console.log(returnedData)
       if (!returnedData.data.email) {
         alert("Invalid login. Please check your username or password.")

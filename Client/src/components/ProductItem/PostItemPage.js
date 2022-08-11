@@ -53,7 +53,7 @@ function PostItemPage() {
     console.log(JSON.stringify(formData));
     console.log(images);
 
-    await fetch("http://localhost:3025/postitem", {
+    await fetch("https://treasure-bay-server.herokuapp.com/postitem", {
       method: "POST",
       body: formData,
     })
@@ -78,7 +78,7 @@ function PostItemPage() {
 
     data.append("image", fileData);
 
-    fetch("http://localhost:3025/images", {
+    fetch("https://treasure-bay-server.herokuapp.com/images", {
       method: "POST",
       body: data,
     })
@@ -93,12 +93,12 @@ function PostItemPage() {
     <>
       {success === true ? (
         <PostPageContainer>
-        <SuccessHeader>Your item has been posted!</SuccessHeader>
-        <StyledImage src={Success}></StyledImage>
-        {/* <Link to='/postanitem'>Post another item</Link> */}
-        <Link to='/'>Return Home</Link>
-        
-      </PostPageContainer>
+          <SuccessHeader>Your item has been posted!</SuccessHeader>
+          <StyledImage src={Success}></StyledImage>
+          {/* <Link to='/postanitem'>Post another item</Link> */}
+          <Link to='/'>Return Home</Link>
+
+        </PostPageContainer>
       ) : (
         <form>
           <div class="container">

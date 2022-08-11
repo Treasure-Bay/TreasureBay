@@ -42,13 +42,13 @@ export function ConversationsProvider({ children }) {
     }, [socket, addMessageToConversations])
 
     const sendMessage = (conversation_id, sender_id, receiver_id, text) => {
-        axios.post('http://localhost:3025/api/sendmessage', { conversation_id, sender_id, receiver_id, text })
+        axios.post('https://treasure-bay-server.herokuapp.com/sendmessage', { conversation_id, sender_id, receiver_id, text })
         socket.emit('send-message', ({ conversation_id, sender_id, receiver_id, text }))
         addMessageToConversations({ conversation_id, sender_id, receiver_id, text })
     }
 
     const createConversation = (sender_id, receiver_id) => {
-        axios.post('http://localhost:3025/addconversation', { sender_id, receiver_id })
+        axios.post('https://treasure-bay-server.herokuapp.com/addconversation', { sender_id, receiver_id })
             .then((response) => {
                 setSelectedConversationID(response.data.conversation_id)
             })

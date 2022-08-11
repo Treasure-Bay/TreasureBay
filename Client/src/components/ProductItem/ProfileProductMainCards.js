@@ -35,7 +35,7 @@ function ProfileProductMainCards({
   const handleSingleProduct = (e) => {
     e.preventDefault();
     setLoadingMessage("Products are loading");
-    fetch(`http://localhost:3025/product/${e.target.id}`)
+    fetch(`https://treasure-bay-server.herokuapp.com/product/${e.target.id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data))
       .then(navigate("/productitem"));
@@ -44,40 +44,40 @@ function ProfileProductMainCards({
 
   const deleteProduct = (e) => {
 
-    fetch(`http://localhost:3025/product/delete/${e.target.id}`, {
-        method: 'DELETE'
+    fetch(`https://treasure-bay-server.herokuapp.com/product/delete/${e.target.id}`, {
+      method: 'DELETE'
     }).then(() => {
       setLoading(false);
       window.location.reload();
     }
     )
-}
+  }
 
-const updateProduct = (e) => {
-console.log(e.target.id)
+  const updateProduct = (e) => {
+    console.log(e.target.id)
 
-e.preventDefault();
-setLoadingMessage("Products are loading");
-fetch(`http://localhost:3025/product/${e.target.id}`)
-  .then((response) => response.json())
-  .then((data) => setSingleProduct(data))
-  .then(navigate("/updateproduct"));
-setLoading(false);
+    e.preventDefault();
+    setLoadingMessage("Products are loading");
+    fetch(`https://treasure-bay-server.herokuapp.com/product/${e.target.id}`)
+      .then((response) => response.json())
+      .then((data) => setSingleProduct(data))
+      .then(navigate("/updateproduct"));
+    setLoading(false);
 
-  // fetch(`http://localhost:3025/product/${e.target.id}`, {
-  //     method: 'PUT',
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     // body: taskData,
-  //   })
-  // .then((response) => response.json())
-  // .then(() => {
-  //   setLoading(false);
-  //   window.location.reload();
-  // }
-  // )
-}
+    // fetch(`http://localhost:3025/product/${e.target.id}`, {
+    //     method: 'PUT',
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     // body: taskData,
+    //   })
+    // .then((response) => response.json())
+    // .then(() => {
+    //   setLoading(false);
+    //   window.location.reload();
+    // }
+    // )
+  }
 
 
 
@@ -103,11 +103,11 @@ setLoading(false);
               </UserInfo>
             </UserProfile> */}
             {/* <br></br> */}
-              
+
           </ProductEach>
           <ButtonDiv id={id}>
-          {/* <Updatebtn id={id} onClick={updateProduct}>Update</Updatebtn> */}
-          <Deletebtn id={id} onClick={deleteProduct}>Sold</Deletebtn>
+            {/* <Updatebtn id={id} onClick={updateProduct}>Update</Updatebtn> */}
+            <Deletebtn id={id} onClick={deleteProduct}>Sold</Deletebtn>
           </ButtonDiv>
         </ProductCard>
       </ProductItemContainer>
@@ -214,7 +214,7 @@ const UserInfo = styled.div`
   font-size: 20px;
 `;
 
-const Deletebtn=styled.button`
+const Deletebtn = styled.button`
   height: 30px;
   width: 50px;
   background-color:red;
@@ -230,7 +230,7 @@ const Deletebtn=styled.button`
   border: none;
 `;
 
-const Updatebtn=styled.button`
+const Updatebtn = styled.button`
   height: 30px;
   width: 70px;
   background-color:orange;

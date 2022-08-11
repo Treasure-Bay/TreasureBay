@@ -24,7 +24,7 @@ function PostItemPage() {
   const { user, setUser } = useContext(UserContext);
   const [user_id, setUser_id] = useState(1);
   const [loadingMessage, setLoadingMessage] = useState("Products are loading");
-  
+
   // console.log(singleProduct)
 
 
@@ -36,7 +36,7 @@ function PostItemPage() {
     description,
     images,
     user_id,
-  
+
   ) => {
     user_id = user[0].user_id;
     const formData = new FormData();
@@ -46,19 +46,19 @@ function PostItemPage() {
         formData.append("images", images[i]);
       }
     }
-    
+
     formData.append("productName", productName);
     formData.append("price", price);
     formData.append("details", details);
     formData.append("description", description);
     formData.append("user_id", user_id);
-  
+
 
 
     console.log(JSON.stringify(formData.images));
     console.log(images);
 
-    await fetch(`http://localhost:3025/update/${singleProduct[0].product_id}`, {
+    await fetch(`https://treasure-bay-server.herokuapp.com/update/${singleProduct[0].product_id}`, {
       method: "PUT",
       body: formData,
     })
@@ -77,140 +77,140 @@ function PostItemPage() {
     <>
       {success === true ? (
         <PostPageContainer>
-        <SuccessHeader>Your item has been posted!</SuccessHeader>
-        <StyledImage src={Success}></StyledImage>
-        {/* <Link to='/postanitem'>Post another item</Link> */}
-        <Link to='/'>Return Home</Link>
-        
-      </PostPageContainer>
+          <SuccessHeader>Your item has been posted!</SuccessHeader>
+          <StyledImage src={Success}></StyledImage>
+          {/* <Link to='/postanitem'>Post another item</Link> */}
+          <Link to='/'>Return Home</Link>
+
+        </PostPageContainer>
       ) : (
 
 
-      <>
+        <>
           {!singleProduct ? (
-        <div>
-          <h1>{loadingMessage}</h1>
-        </div>
-      ) : (
-        <form>
-          <div class="container">
-            <div class="row">
-              <div class="col-25">
-                <label className="pn">Product Name</label>
-              </div>
-              <div class="col-75">
-                <input
-                  type="text"
-                  placeholder={singleProduct[0].name}
-                  value={productName}
-                  onChange={(e) => setProductName(e.target.value)}
-                  className="pi"
-                />
-              </div>
+            <div>
+              <h1>{loadingMessage}</h1>
             </div>
-            <div class="row">
-              <div class="col-25">
-                <label className="pn">Product Price</label>
-              </div>
-              <div class="col-75">
-                <input
-                  type="text"
-                  placeholder={singleProduct[0].price}
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="pi"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label className="pn">Product Description</label>
-              </div>
-              <div class="col-75">
-                <textarea
-                placeholder={singleProduct[0].description}
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="pi"
-                  rows="7"
-                  cols="50"
-                ></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label className="pn">Product Details</label>
-              </div>
-              <div class="col-75">
-                <textarea
-                placeholder={singleProduct[0].details}
-                  value={details}
-                  onChange={(e) => setDetails(e.target.value)}
-                  className="pi"
-                  rows="7"
-                  cols="50"
-                ></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-25">
-                <label className="pn">Product Image</label>
-              </div>
-              <div class="col-75">
-                <AppDropZone
-                
-                  images={images}
-                  setImages={setImages}
-                  setImageSent={setImageSent}
-                />
-                <CurrentTitle>These are your current images</CurrentTitle>
-                <CurrentImgContainer> 
-                  
-                {singleProduct[0].image_url.map((currentimages,index) => (
-          <CurrentImgs id={index} alt="" src={currentimages} onClick={(e)=>{
-            console.log(e)
-          }}>
-        
-          </CurrentImgs>
-        ))}
-        </CurrentImgContainer>
-                <button
-                  className="btn"
-                  type="submit"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    postItem(
-                      productName,
-                      price,
-                      details,
-                      description,
-                      imageSent,
-                      user_id,
-                    
-                    );
-                    // setFileData(images[0]);
-                    // console.log(images[0])
-                    // onSubmitHandler();
-                  }}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-            <div class="row">
-              {/* <DropZone images={images} setImages={setImages}/> */}
+          ) : (
+            <form>
+              <div class="container">
+                <div class="row">
+                  <div class="col-25">
+                    <label className="pn">Product Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input
+                      type="text"
+                      placeholder={singleProduct[0].name}
+                      value={productName}
+                      onChange={(e) => setProductName(e.target.value)}
+                      className="pi"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label className="pn">Product Price</label>
+                  </div>
+                  <div class="col-75">
+                    <input
+                      type="text"
+                      placeholder={singleProduct[0].price}
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                      className="pi"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label className="pn">Product Description</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea
+                      placeholder={singleProduct[0].description}
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      className="pi"
+                      rows="7"
+                      cols="50"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label className="pn">Product Details</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea
+                      placeholder={singleProduct[0].details}
+                      value={details}
+                      onChange={(e) => setDetails(e.target.value)}
+                      className="pi"
+                      rows="7"
+                      cols="50"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label className="pn">Product Image</label>
+                  </div>
+                  <div class="col-75">
+                    <AppDropZone
 
-              {/* <div className="box__input">
+                      images={images}
+                      setImages={setImages}
+                      setImageSent={setImageSent}
+                    />
+                    <CurrentTitle>These are your current images</CurrentTitle>
+                    <CurrentImgContainer>
+
+                      {singleProduct[0].image_url.map((currentimages, index) => (
+                        <CurrentImgs id={index} alt="" src={currentimages} onClick={(e) => {
+                          console.log(e)
+                        }}>
+
+                        </CurrentImgs>
+                      ))}
+                    </CurrentImgContainer>
+                    <button
+                      className="btn"
+                      type="submit"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        postItem(
+                          productName,
+                          price,
+                          details,
+                          description,
+                          imageSent,
+                          user_id,
+
+                        );
+                        // setFileData(images[0]);
+                        // console.log(images[0])
+                        // onSubmitHandler();
+                      }}
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  {/* <DropZone images={images} setImages={setImages}/> */}
+
+                  {/* <div className="box__input">
                   <input
                         className="box__file"
                         type="file"
                         onChange={fileChangeHandler}
                   /> */}
-            </div>
-          </div>
-        </form>
-      )}
-      </>
+                </div>
+              </div>
+            </form>
+          )}
+        </>
       )}
     </>
   );

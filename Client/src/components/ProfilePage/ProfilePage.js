@@ -12,7 +12,7 @@ function ProfilePage() {
   const [loading, setLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState("");
 
- 
+
 
   useEffect(() => {
     profileProducts();
@@ -21,7 +21,7 @@ function ProfilePage() {
   async function profileProducts() {
     setLoadingMessage("Products are loading");
 
-  await fetch(`http://localhost:3025/profileproducts/${user[0].user_id}`)
+    await fetch(`https://treasure-bay-server.herokuapp.com/profileproducts/${user[0].user_id}`)
       .then((response) => response.json())
       .then((data) => setUserProduct(data));
     setLoading(false);
@@ -30,7 +30,7 @@ function ProfilePage() {
 
   return (
     <>
-      {!userproduct? (
+      {!userproduct ? (
         <div>
           <h1>loading</h1>
         </div>

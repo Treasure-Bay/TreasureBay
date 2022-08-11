@@ -16,8 +16,8 @@ function MessagingPage() {
     const ID = user.user_id
     useEffect(() => {
         axios.all([
-            axios.get(`http://localhost:3025/conversations/${ID}`),
-            axios.get('http://localhost:3025/messages')
+            axios.get(`https://treasure-bay-server.herokuapp.com/conversations/${ID}`),
+            axios.get('https://treasure-bay-server.herokuapp.com/messages')
         ])
             .then((response) => {
                 setConversations(response[0].data);

@@ -65,7 +65,7 @@ function SignUpPage() {
   const signUp = async (firstName, lastName, city, state, zipcode, email, password, file) => {
     try {
       // const response = await axios.get(`http://localhost:3025/login/${email}`)
-      const response = await axios.get(`http://localhost:3025/login/${email}`)
+      const response = await axios.get(`https://treasure-bay-server.herokuapp.com/login/${email}`)
       if (response.data.length === 0) {
         const formData = new FormData();
         if (file) {
@@ -81,7 +81,7 @@ function SignUpPage() {
         formData.append("email", email);
         formData.append("password", password);
         try {
-          const response = await axios.post("http://localhost:3025/createprofile", formData);
+          const response = await axios.post("https://treasure-bay-server.herokuapp.com/createprofile", formData);
           console.log(response)
           setSuccess(true);
           console.log('user created')

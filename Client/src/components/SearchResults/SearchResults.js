@@ -17,7 +17,7 @@ const SearchResults = () => {
 
     async function getProducts() {
         try {
-            const response = await axios.get(`http://localhost:3025/search/${search}`)
+            const response = await axios.get(`https://treasure-bay-server.herokuapp.com/search/${search}`)
             //   .then((response) => response.json())
             setProducts(response.data)
 
