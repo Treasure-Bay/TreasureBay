@@ -18,7 +18,7 @@ export default function MessagingInput() {
     const handleSubmit = (e) => {
         e.preventDefault()
         // window.scrollTo({ bottom: 0 })
-        let sender_id = user.user_id
+        let sender_id = user[0].user_id
         let receiver_id = selectedConversation.user_id
         setTextHeight('30px')
         sendMessage(selectedConversation.conversation_id, sender_id, receiver_id, text)

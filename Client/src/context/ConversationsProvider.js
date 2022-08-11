@@ -51,6 +51,7 @@ export function ConversationsProvider({ children }) {
         axios.post('https://treasure-bay-server.herokuapp.com/addconversation', { sender_id, receiver_id })
             .then((response) => {
                 setSelectedConversationID(response.data.conversation_id)
+                socket.emit('join-conversation', response.data.conversation_id)
             })
     }
 

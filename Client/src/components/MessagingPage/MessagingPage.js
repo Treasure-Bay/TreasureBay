@@ -13,7 +13,8 @@ function MessagingPage() {
     const { setMessages, setConversations } = useConversations()
 
     //will be replaced with user id
-    const ID = user.user_id
+    console.log(user[0].user_id)
+    const ID = user[0].user_id
     useEffect(() => {
         axios.all([
             axios.get(`https://treasure-bay-server.herokuapp.com/conversations/${ID}`),
