@@ -13,7 +13,7 @@ function ProductPage() {
 
   function getProducts() {
     try {
-      fetch("https://treasure-bay-server.herokuapp.com/products")
+      fetch("https://treasure-bay-server.herokuapp.com/all")
         .then((response) => response.json())
         .then((data) => setProducts(data));
       setLoading(false);
