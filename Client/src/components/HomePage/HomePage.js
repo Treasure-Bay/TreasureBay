@@ -6,7 +6,6 @@ import ProductPage from '../ProductItem/ProductPage';
 
 function HomePage() {
   const { user, setUser } = useContext(UserContext)
-  console.log(user)
   return (
     <div className='homepage'>
 
