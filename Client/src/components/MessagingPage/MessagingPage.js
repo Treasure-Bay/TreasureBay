@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from 'react'
+import React, { createContext, useEffect, useContext } from 'react'
 import Conversations from '../Conversations/Conversations';
 import Messages from '../Messages/Messages'
 import axios from 'axios';
@@ -8,7 +8,7 @@ import './MessagingPage.css'
 
 function MessagingPage() {
 
-    const { user } = createContext(UserContext)
+    const { user } = useContext(UserContext)
 
     const { setMessages, setConversations } = useConversations()
 
