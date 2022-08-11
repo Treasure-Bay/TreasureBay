@@ -90,5 +90,7 @@ code {
 .shoppingtips {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-width: 1200px;
 }
