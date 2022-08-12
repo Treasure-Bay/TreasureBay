@@ -95,3 +95,8 @@ code {
   flex-direction: column;
   min-width: 1200px;
 }
+
+.carousel .slide img {
+  height: 350px;
+  width: 350px;
+}

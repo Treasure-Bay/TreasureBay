@@ -12,15 +12,11 @@ function ProductPage() {
   }, []);
 
   function getProducts() {
-    try {
-      fetch("https://treasure-bay-server.herokuapp.com/all")
-        .then((response) => response.json())
-        .then((data) => setProducts(data));
-      setLoading(false);
-    } catch (error) {
-      console.log(error)
-    }
-
+    // fetch("https://rds-postgres-blueocean.czfvuzdlopph.us-east-1.rds.amazonaws.com/all")
+    fetch("http://localhost:3025/all")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+    setLoading(false);
   }
 
   return (
@@ -42,6 +38,8 @@ function ProductPage() {
               avatar={data.avatar}
               fname={data.first_name}
               lname={data.last_name}
+              city={data.city}
+              state={data.state}
             />
           ))}
         </ProductContainer>

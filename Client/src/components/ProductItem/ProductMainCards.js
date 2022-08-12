@@ -17,6 +17,8 @@ function ProductMainCards({
   lname,
   fname,
   id,
+  city,
+  state
 }) {
   const { singleProduct, setSingleProduct } = useContext(SingleProductContext);
   const [loading, setLoading] = useState(true);
@@ -33,7 +35,7 @@ function ProductMainCards({
   const handleSingleProduct = (e) => {
     e.preventDefault();
     setLoadingMessage("Products are loading");
-    fetch(`https://treasure-bay-server.herokuapp.com/product/${e.target.id}`)
+    fetch(`http://localhost:3025/product/${e.target.id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data))
       .then(navigate("/productitem"));
@@ -51,15 +53,13 @@ function ProductMainCards({
 
             <PicImg id={id} src={image_url[0]} />
             <ProductPrice id={id}>{price}</ProductPrice>
-
-            <UserProfile id={id}>
-              {" "}
-              Seller:
+            <UserProfile id={id}> Seller:
               <UserProfileImg id={id} src={avatar} />
               <UserInfo id={id}>
                 {fname} {lname}{" "}
               </UserInfo>
             </UserProfile>
+            <ProductLocation id={id}>Location: {city},{state}</ProductLocation>
           </ProductEach>
         </ProductCard>
       </ProductItemContainer>
@@ -118,10 +118,12 @@ const ProductName = styled.div`
   font-weight: 500px;
   color: black;
   text-align: center;
+  margin-bottom: 10px;
 `;
 const ProductPrice = styled.div`
   font-size: 25px;
   font-weight: 500px;
+  font-weight: bold;
   color: black;
   margin-top: 5px;
 `;
@@ -147,6 +149,7 @@ const UserProfile = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  font-size: 20px;
 `;
 const UserProfileImg = styled.img`
   margin: 0;
@@ -164,3 +167,6 @@ const UserProfileImg = styled.img`
 const UserInfo = styled.div`
   font-size: 20px;
 `;
+const ProductLocation = styled.div`
+  font-size: 20px;
+`

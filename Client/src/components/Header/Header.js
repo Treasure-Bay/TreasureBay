@@ -29,8 +29,13 @@ function Header() {
                          </Link>
                          <SearchBarContainer>
                               <Search />
+                              <UserLocationContainer>
+                                   <LocIcon src='https://www.iconpacks.net/icons/2/free-location-icon-2955-thumb.png' />
+                                   <Span>{`${user[0].city}, ${user[0].state}`}</Span>
+                              </UserLocationContainer>
                          </SearchBarContainer>
                          <HeaderOptionsContainer>
+
                               <Link to='/postanitem'><PostIcon src={AddIcon}></PostIcon></Link>
                               <Link to='/messages'><MessageIcon src={Message}></MessageIcon></Link>
                               {user && <DropDown></DropDown>}
@@ -38,6 +43,7 @@ function Header() {
                     </>
                ) : (
                     <>
+
                          <Link to='/'>
                               <HeaderLogoContainer>
                                    <TreasureBayLogo src={TreasureBay} />
@@ -87,8 +93,8 @@ const TreasureBayLogo = styled.img`
 
 const SearchBarContainer = styled.div`
      display: flex;
-     flex: .5;
-     justify-content: center;
+     flex: .7;
+     justify-content: flex-end;
      align-items: center;
      /* width: 40%; */
 `
@@ -121,4 +127,21 @@ const PostIcon = styled.img`
 
 const StyledLink = styled(Link)`
      color: rgba(13, 153, 255);
+`
+
+const UserLocationContainer = styled.div`
+     display: flex;
+     justify-content: center;
+     align-items: center;
+`
+const LocIcon = styled.img`
+     height: 22px;
+     border-radius: 999px;
+     margin-top: 2px;
+     margin-right: 2px;
+     margin-left: -25px;
+`
+
+const Span = styled.span`
+     font-size: 15px;
 `

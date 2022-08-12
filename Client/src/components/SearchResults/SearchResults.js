@@ -3,34 +3,46 @@ import SearchContext from '../../context/SearchProvider';
 import ProductMainCards from '../ProductItem/ProductMainCards';
 import styled from 'styled-components'
 import axios from 'axios';
+import UserContext from '../../context/UserProvider';
 
 const SearchResults = () => {
 
     const [products, setProducts] = useState([])
     //search context
     const { search, setSearch } = useContext(SearchContext);
+    const { user, setUser } = useContext(UserContext);
     console.log(search)
 
     useEffect(() => {
         getProducts()
-    }, [search])
+    }, [user, search])
 
-    async function getProducts() {
-        try {
-            const response = await axios.get(`https://treasure-bay-server.herokuapp.com/search/${search}`)
-            //   .then((response) => response.json())
-            setProducts(response.data)
+    const getProducts = async () => {
+        if (user) {
+            try {
+                const response = await axios.get(`http://localhost:3025/searchlocation/${search}/${user[0].city}/${user[0].state}`)
+                setProducts(response.data)
+            } catch (error) {
+                console.log(error.message)
+            }
+        } else {
+            try {
+                const response = await axios.get(`http://localhost:3025/search/${search}`)
+                //   .then((response) => response.json())
+                setProducts(response.data)
 
-        } catch (error) {
-            console.log(error.message)
+            } catch (error) {
+                console.log(error.message)
+            }
         }
+
 
     }
 
     if (!products) {
         return (
             <>
-                <h1>loading</h1>
+                <h1>loading...</h1>
             </>
         )
     } else {
@@ -47,7 +59,11 @@ const SearchResults = () => {
                             image_url={product.image_url}
                             fname={product.first_name}
                             lname={product.last_name}
-                            id={product.product_id} />
+                            id={product.product_id}
+                            city={product.city}
+                            state={product.state}
+                        />
+
 
                     )
                     )}
