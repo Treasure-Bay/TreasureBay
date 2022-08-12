@@ -35,7 +35,7 @@ function ProductMainCards({
   const handleSingleProduct = (e) => {
     e.preventDefault();
     setLoadingMessage("Products are loading");
-    fetch(`https://treasure-bay-server.herokuapp.com/${e.target.id}`)
+    fetch(`https://treasure-bay-server.herokuapp.com/product/${e.target.id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data))
       .then(navigate("/productitem"));
