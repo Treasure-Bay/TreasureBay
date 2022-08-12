@@ -20,14 +20,14 @@ const SearchResults = () => {
     const getProducts = async () => {
         if (user) {
             try {
-                const response = await axios.get(`http://localhost:3025/searchlocation/${search}/${user[0].city}/${user[0].state}`)
+                const response = await axios.get(`https://treasure-bay-server.herokuapp.com/searchlocation/${search}/${user[0].city}/${user[0].state}`)
                 setProducts(response.data)
             } catch (error) {
                 console.log(error.message)
             }
         } else {
             try {
-                const response = await axios.get(`http://localhost:3025/search/${search}`)
+                const response = await axios.get(`https://treasure-bay-server.herokuapp.com/search/${search}`)
                 //   .then((response) => response.json())
                 setProducts(response.data)
 
