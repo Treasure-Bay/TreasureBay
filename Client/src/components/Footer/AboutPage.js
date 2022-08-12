@@ -44,7 +44,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> Lead Developer</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/gibran-reyes-22052793/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/Greyes92'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
@@ -59,7 +59,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> UI/UX Lead</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/aaron-m-warren/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/AMWARREN21'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
@@ -74,7 +74,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> Scrum Master</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/justinsmith854/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/jsmith3763'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
@@ -89,7 +89,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> Database Administrator</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/michael-gene-howard/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/howardmg'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
@@ -104,7 +104,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> Communications Lead</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/joshuamcmillersr/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/jjmcmil79'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
@@ -119,7 +119,7 @@ function AboutPage() {
           <TeamMemberInfo><b>Role:</b> Lead Developer</TeamMemberInfo>
           <LinksContainer>
             <A href='https://www.linkedin.com/in/lexi-jin/'>
-              <LinkLogo src='https://cdn.icon-icons.com/icons2/3041/PNG/512/linkedin_logo_icon_189225.png'></LinkLogo>
+              <LinkLogo src='https://cdn-icons-png.flaticon.com/512/174/174857.png'></LinkLogo>
             </A>
             <A href='https://github.com/yanchaoj'>
               <LinkLogo src='https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png'></LinkLogo>
