@@ -2,6 +2,7 @@
 Treasure Bay Repo forked from Treasure Bay organization
 
 E-Commerce app using a similar design as the popular Web App OfferUp
+
 Built with -
 Front End - Javascript, React, HTML5, CSS3
 Back End - Node.js, Express, PostgreSQL, RESTful API, Passport.js, Bcrypt, Socket.io, Multer
