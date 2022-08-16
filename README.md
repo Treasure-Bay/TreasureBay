@@ -4,13 +4,19 @@ Treasure Bay Repo forked from Treasure Bay organization
 E-Commerce app using a similar design as the popular Web App OfferUp
 
 Built with -
+
 Front End - Javascript, React, HTML5, CSS3
+
 Back End - Node.js, Express, PostgreSQL, RESTful API, Passport.js, Bcrypt, Socket.io, Multer
+
 AWS:
+
 -S3Bucket to handle uploading photos for User Avatar and also products that users are selling
+
 -RDS hosting our PostgreSQL DB 
 
 Deployed client side on Netlify - https://treasurebay.netlify.app/
+
 Deployed server side on Heroku that utilizes RESTful API endpoint to Create/Read/Update/Post data to RDS database
 
 ![image](https://user-images.githubusercontent.com/57576309/184940724-7fd541ab-1654-48bc-b72d-a575158308aa.png)
