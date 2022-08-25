@@ -22,10 +22,17 @@ Treasure Bay is an E-Commerce website where a user can buy and sell their used i
 - Multer
 
 **AWS**
-
 - S3Bucket to handle uploading photos for User Avatar and also products that users are selling
-
 - RDS hosting our PostgreSQL DB
+
+**Developer Tools**
+- Github
+- NPM
+- Netlify
+- Heroku
+- Figjam
+- Postman
+- Trello
 
 **Deployed client side on Netlify** - https://treasurebay.netlify.app/
 
