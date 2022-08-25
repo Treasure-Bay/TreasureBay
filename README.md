@@ -1,5 +1,4 @@
-# TreasureBay-Deployed
-Treasure Bay Repo forked from Treasure Bay organization
+# TreasureBay
 
 Treasure Bay is an E-Commerce website where a user can buy and sell their used items based on their location. It was made by a group of six Full Stack Software Engineers over the course of 3 weeks using an Agile work environment with week long sprints. The dev team was assigned a client and developed Treasure Bay by following user stories based off of the requests of the client. This project is a culmination of all the skills we have learned during our time in the Advanced Software Engineering Immersive at Galvanize. The front end was built using JavaScript, HTML5, CSS3, and React and, deployed with Netlify. For the back end, AWS(RDS, S3), PostgreSQL, Express.js, Node.js, Passport.js, Bcrypt, Socket.io and Multer was used and then, deployed using Heroku. A great deal was learned during the development of this site and the team had an absolute blast collaborating with one another. The team looks forward to what is over the horizon and is eager to take the next step in their software engineering journey.
 
