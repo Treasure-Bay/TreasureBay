@@ -17,7 +17,7 @@ AWS:
 
 Deployed client side on Netlify - https://treasurebay.netlify.app/
 
-Deployed server side on Heroku that utilizes RESTful API endpoint to Create/Read/Update/Delete data to RDS database
+Deployed server side on Heroku that utilizes RESTful API endpoints to Create/Read/Update/Delete data to RDS database
 
 ![image](https://user-images.githubusercontent.com/57576309/184940724-7fd541ab-1654-48bc-b72d-a575158308aa.png)
 ![image](https://user-images.githubusercontent.com/57576309/184942348-06811ff7-3922-47b9-be41-f720bf1b424f.png)
