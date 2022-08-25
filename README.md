@@ -1,23 +1,38 @@
 # TreasureBay-Deployed
 Treasure Bay Repo forked from Treasure Bay organization
 
-E-Commerce app using a similar design as the popular Web App OfferUp
+Treasure Bay is an E-Commerce website where a user can buy and sell their used items based on their location. It was made by a group of six Full Stack Software Engineers over the course of 3 weeks using an Agile work environment with week long sprints. The dev team was assigned a client and developed Treasure Bay by following user stories based off of the requests of the client. This project is a culmination of all the skills we have learned during our time in the Advanced Software Engineering Immersive at Galvanize. The front end was built using JavaScript, HTML5, CSS3, and React and, deployed with Netlify. For the back end, AWS(RDS, S3), PostgreSQL, Express.js, Node.js, Passport.js, Bcrypt, Socket.io and Multer was used and then, deployed using Heroku. A great deal was learned during the development of this site and the team had an absolute blast collaborating with one another. The team looks forward to what is over the horizon and is eager to take the next step in their software engineering journey.
 
-Built with -
 
-Front End - Javascript, React, HTML5, CSS3
+### Built with:
 
-Back End - Node.js, Express, PostgreSQL, RESTful API, Passport.js, Bcrypt, Socket.io, Multer
+**Front End**
+-Javascript
+-React
+-HTML5
+-CSS3
 
-AWS:
+**Back End** 
+-Node.js
+-Express
+-PostgreSQL
+-RESTful API
+-Passport.js
+-Bcrypt
+-Socket.io
+-Multer
+
+**AWS**
 
 -S3Bucket to handle uploading photos for User Avatar and also products that users are selling
 
--RDS hosting our PostgreSQL DB 
+-RDS hosting our PostgreSQL DB
 
 Deployed client side on Netlify - https://treasurebay.netlify.app/
 
-Deployed server side on Heroku that utilizes RESTful API endpoints to Create/Read/Update/Delete data to RDS database
+Deployed server side on Heroku that utilizes RESTful API endpoints with full CRUD functionality to RDS database
+
+
 
 ![image](https://user-images.githubusercontent.com/57576309/184940724-7fd541ab-1654-48bc-b72d-a575158308aa.png)
 ![image](https://user-images.githubusercontent.com/57576309/184942348-06811ff7-3922-47b9-be41-f720bf1b424f.png)
