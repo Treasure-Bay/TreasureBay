@@ -29,7 +29,7 @@ Treasure Bay is an E-Commerce website where a user can buy and sell their used i
 
 **Deployed client side on Netlify** - https://treasurebay.netlify.app/
 
-**Deployed server side on Heroku that utilizes RESTful API endpoints with full CRUD functionality to RDS database
+**Deployed server side on Heroku that utilizes RESTful API endpoints with full CRUD functionality to RDS database**
 
 
 
