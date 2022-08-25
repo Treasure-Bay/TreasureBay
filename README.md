@@ -6,20 +6,20 @@ Treasure Bay is an E-Commerce website where a user can buy and sell their used i
 ### Built with:
 
 **Front End**
--Javascript
--React
--HTML5
--CSS3
+- Javascript
+- React
+- HTML5
+- CSS3
 
 **Back End** 
--Node.js
--Express
--PostgreSQL
--RESTful API
--Passport.js
--Bcrypt
--Socket.io
--Multer
+- Node.js
+- Express
+- PostgreSQL
+- RESTful API
+- Passport.js
+- Bcrypt
+- Socket.io
+- Multer
 
 **AWS**
 
